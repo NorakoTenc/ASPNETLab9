@@ -1,0 +1,25 @@
+﻿@using ASPNETLab9.Models
+@{
+
+    List<Product> products = new List<Product>();
+
+
+    products.Add(new Product { ID = 1, Name = "Product 1", Price = 12.34M });
+    products.Add(new Product { ID = 2, Name = "Product 2", Price = 56.78M });
+    products.Add(new Product { ID = 3, Name = "Product 3", Price = 90.12M });
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width" />
+    <title>Завдання</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <div class="main">
+    @await Component.InvokeAsync("Product", new {products=products})
+    @await Component.InvokeAsync("Weather", new {region="Mykolaiv"})
+    </div>
+</body>
+</html>
